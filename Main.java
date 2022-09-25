@@ -16,4 +16,5 @@ public class Main {
         Car Hyundai = new Car("Hyundai", "Avante", 1.6, null, 2016, "Южная Корея");
         System.out.println("Марка машины "+Hyundai.brand+","+" модель "+Hyundai.model+","+" объём двигателя "+Hyundai.engineVolume+" литров "+" цвет кузова "+Hyundai.color+","+" год производства "+Hyundai.productionYear+","+" трана сборки "+Hyundai.productionCountry);
     }
+
 }

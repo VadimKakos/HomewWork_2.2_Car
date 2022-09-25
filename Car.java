@@ -8,6 +8,7 @@ public class Car {
     public int productionYear;
     public String productionCountry;
 
+
     Car(String brand, String model, double engineVolume, String color, int productionYear, String productionCountry) {
         if (brand == null) {
             this.brand = "default";
