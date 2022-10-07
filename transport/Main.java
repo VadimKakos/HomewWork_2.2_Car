@@ -8,20 +8,19 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
 
-        Car grande = new Car("Lada", null, 1.7, "жёлтый", 2015, "Россия", "auto", "Hatchback", "x000xx00", 5, "летняя");
-        System.out.println("Марка машины " + grande.getBrand() + "," + " модель " + grande.getModel() + "," + " объём двигателя " + grande.getEngineVolume() + " литров " + " цвет кузова " + grande.getColor() + "," + " год производства " + grande.getProductionYear() + "," + " cтрана сборки " + grande.getProductionCountry() +","+  " коробка передач " + grande.getTransmission() + ","+ " кузов " + grande.getBody() +","+ " гос. номер " + grande.getIdNumber()+ "," + " количество мест " + grande.getSeatsNumber()  +","+ " резина " + grande.getTires());
+        Car grande = new Car("Lada", null, 1.7, "жёлтый", 2015, "Россия", 130, "auto", "Hatchback", "x000xx00", 5, "летняя");
+        printAuto(grande);
+        Car audi = new Car("audi", "A8 50 L TDI quattro", 0, "чёрный", 2020, "Германия", 130, "auto", "Hatchback", "x000xx00", 5, "летняя");
+        printAuto(audi);
 
-        Car audi = new Car("audi", "A8 50 L TDI quattro", 0, "чёрный", 2020, "Германия", "auto", "Hatchback", "x000xx00", 5, "летняя");
-        System.out.println("Марка машины " + audi.getBrand() + "," + " модель " + audi.getModel() + "," + " объём двигателя " + audi.getEngineVolume() + " литров " + " цвет кузова " + audi.getColor() + "," + " год производства " + audi.getProductionYear() + "," + " cтрана сборки " + audi.getProductionCountry()+  " коробка передач " + audi.getTransmission() + ","+ " кузов " + audi.getBody() +","+ " гос. номер " + audi.getIdNumber()+ "," + " количество мест " + audi.getSeatsNumber()  +","+ " резина " + audi.getTires());
+        Car bmw = new Car("BMW", "Z8", 3.0, "чёрный", 0, "Германия", 130, "auto", "Hatchback", "x000xx00", 5, "летняя");
+        printAuto(bmw);
 
-        Car BMW = new Car("BMW", "Z8", 3.0, "чёрный", 0, "Германия", "auto", "Hatchback", "x000xx00", 5, "летняя");
-        System.out.println("Марка машины " + BMW.getBrand() + "," + " модель " + BMW.getModel() + "," + " объём двигателя " + BMW.getEngineVolume() + " литров " + " цвет кузова " + BMW.getColor() + "," + " год производства " + BMW.getProductionYear() + "," + " cтрана сборки " + BMW.getProductionCountry()+  " коробка передач " + BMW.getTransmission() + ","+ " кузов " + BMW.getBody() +","+ " гос. номер " + BMW.getIdNumber()+ "," + " количество мест " + BMW.getSeatsNumber()  +","+ " резина " + BMW.getTires());
+        Car kia = new Car(null, "Sportage", 2.4, "красный", 2018, "Южная Корея", 130, "auto", "Hatchback", "x000xx00", 5, "летняя");
+        printAuto(kia);
 
-        Car Kia = new Car(null, "Sportage", 2.4, "красный", 2018, "Южная Корея", "auto", "Hatchback", "x000xx00", 5, "летняя");
-        System.out.println("Марка машины " + Kia.getBrand() + "," + " модель " + Kia.getModel() + "," + " объём двигателя " + Kia.getEngineVolume() + " литров " + " цвет кузова " + Kia.getColor() + "," + " год производства " + Kia.getProductionYear() + "," + " cтрана сборки " + Kia.getProductionCountry()+  " коробка передач " + Kia.getTransmission() + ","+ " кузов " + Kia.getBody() +","+ " гос. номер " + Kia.getIdNumber()+ "," + " количество мест " + Kia.getSeatsNumber()  +","+ " резина " + Kia.getTires());
-
-        Car Hyundai = new Car("Hyundai", "Avante", 1.6, null, 2016, "Южная Корея", "auto", "Hatchback", "x000xx00", 5, "летняя");
-        System.out.println("Марка машины " + Hyundai.getBrand() + "," + " модель " + Hyundai.getModel() + "," + " объём двигателя " + Hyundai.getEngineVolume() + " литров " + " цвет кузова " + Hyundai.getColor() + "," + " год производства " + Hyundai.getProductionYear() + "," + " трана сборки " + Hyundai.getProductionCountry() + " коробка передач " + Hyundai.getTransmission() + "," + " кузов " + Hyundai.getBody() + "," + " гос. номер " + Hyundai.getIdNumber() + "," + " количество мест " + Hyundai.getSeatsNumber() + "," + " резина " + Hyundai.getTires());
+        Car hyundai = new Car("Hyundai", "Avante", 1.6, null, 2016, "Южная Корея", 130, "auto", "Hatchback", "x000xx00", 5, "летняя");
+        printAuto(hyundai);
 
         System.out.println(grande.getTires());
         grande.changeTyre();
@@ -29,11 +28,52 @@ public class Main {
 
         grande.new Key("удалённый запуск двигателя", "бесключевой доступ");
         audi.new Insurance(2023, 13000, 123456789);
-        BMW.new Insurance(2023, 13000, 123456789);
-        Kia.new Insurance(2023, 13000, 123456789);
-        Hyundai.new Insurance(2023, 13000, 123456789);
+        bmw.new Insurance(2023, 13000, 123456789);
+        kia.new Insurance(2023, 13000, 123456789);
+        hyundai.new Insurance(2023, 13000, 123456789);
 
-        Hyundai.getInsurance();
+        hyundai.getInsurance();
+
+
+        Train firstTrain = new Train("Ласточка", "B-901", 2011,"Россия",null, 301,
+                3500, 0, "Белорусский вокзал", "Минск-Пассажирский", 11);
+
+        Train secondTrain = new Train("Ленинград", "D-125", 2019,"Россия",null, 270,
+                1700, 0, "Ленинградский вокзал", " Ленинград-Пассажирский", 8);
+
+        printTrain(firstTrain);
+        printTrain(secondTrain);
+
+
+        Bus firstBus = new Bus("НефАЗ", "5299", 2000, "Россия", "", 100);
+        Bus secondBus = new Bus("ЛиАЗ", "4293", 2015, "Россия", "", 110);
+        Bus thirdBus = new Bus("НефАЗ", "4208", 1989, "Россия", "", 80);
+
+        printBus(firstBus);
+        printBus(secondBus);
+        printBus(thirdBus);
+
+        firstBus.refill();
+        firstTrain.refill();
+        bmw.refill();
+
 
     }
+
+    public static void printAuto(Car auto) {
+        System.out.println("Марка машины " + auto.getBrand() + "," + " модель " + auto.getModel() + "," + " объём двигателя " + auto.getEngineVolume() + " литров " + " цвет кузова " + auto.getColor() + "," + " год производства " + auto.getProductionYear() + "," + " страна сборки " + auto.getProductionCountry() + " максимальная скорость " + auto.getMaxSpeed() + " коробка передач " + auto.getTransmission() + "," + " кузов " + auto.getBody() + "," + " гос. номер " + auto.getIdNumber() + "," + " количество мест " + auto.getSeatsNumber() + "," + " резина " + auto.getTires());
+    }
+
+    public static void printTrain(Train train) {
+        System.out.println("Тип поезда " + train.getBrand() + " модель " + train.getModel() + " год производства " + train.getProductionYear() + " страна производства " + train.getProductionCountry()
+                + " цвет поезда " + train.getColor() + " максимальная скорость " + train.getMaxSpeed() + " цена поездки " + train.getCostOfTravel() + " время поездки " + train.getTravelTime() + " начальная станция " + train.getStartingStationName() + " конечная станция " +
+                train.getFinalStationName() + " количество мест " + train.getCarsNumber());
+    }
+
+    public static void printBus(Bus bus) {
+        System.out.println("Марка машины " + bus.getBrand() + "," + " модель " + bus.getModel() + "," + " цвет кузова " + bus.getColor() + "," + " год производства " + bus.getProductionYear() + "," + " страна сборки " + bus.getProductionCountry() + " максимальная скорость " + bus.getMaxSpeed());
+    }
+
+
+
 }
