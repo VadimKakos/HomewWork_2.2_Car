@@ -2,9 +2,9 @@ package transport;
 
 import java.time.LocalDate;
 
-public class Car extends Transport {
+public class Car {
 
-    public class Key {
+/*    public class Key {
         private String remoteEngineStart;
         private String keylessEntry;
 
@@ -192,4 +192,12 @@ public class Car extends Transport {
     public void refill() {
         System.out.println("Заправляюсь бензином/ дизелем/ заряжаюсь");
     }
-}
+
+    @Override
+    public void printInfo() {
+        System.out.println("Марка машины " + getBrand() + "," + " модель " + getModel() + "," + " объём двигателя " + getEngineVolume() + " литров " + " цвет кузова " + getColor() + "," + " год производства " +
+                getProductionYear() + "," + " страна сборки " + getProductionCountry() + " максимальная скорость " + getMaxSpeed() + " коробка передач " +
+                getTransmission() + "," + " кузов " + getBody() + "," + " гос. номер " + getIdNumber() + "," + " количество мест " + getSeatsNumber() + "," + " резина " + getTires());
+
+    }
+*/}

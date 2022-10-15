@@ -1,7 +1,7 @@
 package transport;
 
-public class Train extends Transport {
-    private int costOfTravel;
+public class Train  {
+ /*   private int costOfTravel;
     private int travelTime;
     private String startingStationName;
     private String finalStationName;
@@ -81,4 +81,12 @@ public class Train extends Transport {
     public void refill() {
         System.out.println("Заправляюсь дизелем");
     }
-}
+
+    @Override
+    public void printInfo() {
+        System.out.println("Тип поезда " + getBrand() + " модель " + getModel() + " год производства " + getProductionYear() + " страна производства " + getProductionCountry()
+                + " цвет поезда " + getColor() + " максимальная скорость " + getMaxSpeed() + " цена поездки " + getCostOfTravel() + " время поездки " + getTravelTime() + " начальная станция " +
+                getStartingStationName() + " конечная станция " +
+                getFinalStationName() + " количество мест " + getCarsNumber());
+    }
+*/}
