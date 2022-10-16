@@ -11,13 +11,9 @@ public abstract class Transport {
         setEngineVolume(engineVolume);
     }
 
-    public void getMoving() {
-        System.out.println("Начал движение");
-    }
+    public abstract void getMoving();
 
-    public void stop() {
-        System.out.println("закончил движение");
-    }
+    public abstract void stop();
 
     /*
 

@@ -1,27 +1,22 @@
 package transport;
 
-import transport.Car;
-
-import java.security.Key;
-import java.time.LocalDate;
-
 public class Main {
     public static void main(String[] args) {
 
-        PassengerCars lada = new PassengerCars("Lada", "2110", 1.4);
-        PassengerCars skoda = new PassengerCars("Skoda", "rapid", 1.4);
-        PassengerCars toyota = new PassengerCars("Toyota", "corolla", 1.4);
-        PassengerCars renault = new PassengerCars("Renault", "logan", 1.4);
+        PassengerCar lada = new PassengerCar("Lada", "2110", 1.4);
+        PassengerCar skoda = new PassengerCar("Skoda", "rapid", 1.4);
+        PassengerCar toyota = new PassengerCar("Toyota", "corolla", 1.4);
+        PassengerCar renault = new PassengerCar("Renault", "logan", 1.4);
 
-        Trucks ford = new Trucks("Lada", "Transit", 16);
-        Trucks mercedes = new Trucks("Skoda", "Sprinter", 16);
-        Trucks kamaz = new Trucks("Kamaz", "54901", 16);
-        Trucks volkswagen = new Trucks("Renault", "Crafter", 16);
+        Truck ford = new Truck("Lada", "Transit", 16);
+        Truck mercedes = new Truck("Skoda", "Sprinter", 16);
+        Truck kamaz = new Truck("Kamaz", "54901", 16);
+        Truck volkswagen = new Truck("Renault", "Crafter", 16);
 
-        Buses simaz = new Buses("Simaz", "2258-539", 12);
-        Buses scania = new Buses("Scania", "TOURING", 12);
-        Buses man = new Buses("Man", "Lion’s Coach", 12);
-        Buses maz = new Buses("Maз", "241", 12);
+        RacingBus simaz = new RacingBus("Simaz", "2258-539", 12);
+        RacingBus scania = new RacingBus("Scania", "TOURING", 12);
+        RacingBus man = new RacingBus("Man", "Lion’s Coach", 12);
+        RacingBus maz = new RacingBus("Maз", "241", 12);
 
 
         lada.getMoving();
@@ -41,6 +36,11 @@ public class Main {
 
         DDriver den = new DDriver("Денис", "D", 13, scania);
         den.printInfo();
+
+        den.getMoving();
+        den.stop();
+
+        trevor.refill();
      /*   Car grande = new Car("Lada", null, 1.7, "жёлтый", 2015, "Россия", 130, "auto", "Hatchback", "x000xx00", 5, "летняя");
         grande.printInfo();
 
