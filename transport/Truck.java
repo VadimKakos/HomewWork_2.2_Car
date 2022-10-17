@@ -2,9 +2,51 @@ package transport;
 
 public class Truck extends Transport implements Competing{
 
-    public Truck(String brand, String model, double engineVolume) {
-        super(brand, model, engineVolume);
+
+
+    public enum Capacity {N1(0, 3.5), N2(3.5, 12), N3(12, 100);
+
+
+        private final double min;
+        private final double max;
+
+        Capacity(double min, double max) {
+            this.min = min;
+            this.max = max;
+        }
+
+        public double getMin() {
+            return min;
+        }
+
+        public double getMax() {
+            return max;
+        }
     }
+
+    private Capacity capacity;
+
+    public Truck(String brand, String model, double engineVolume, Capacity capacity) {
+        super(brand, model, engineVolume);
+        this.capacity = capacity;
+    }
+
+    public Capacity getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
+    }
+
+    public void  findTypeAuto() {
+        if (capacity == null) {
+            System.out.println("Данных по авто недостаточно");
+        } else {
+            System.out.println("Вместимость от " + capacity.getMin() + " до " + capacity.getMax());
+        }
+    }
+
 
     @Override
     public void pitStop() {

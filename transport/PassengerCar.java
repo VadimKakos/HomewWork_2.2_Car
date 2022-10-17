@@ -2,7 +2,29 @@ package transport;
 
 public class PassengerCar extends Transport implements Competing{
     public PassengerCar(String brand, String model, double engineVolume) {
+
         super(brand, model, engineVolume);
+    }
+
+    public enum BodyType {
+        SEDAN, HATCHBACK, COUPE, WAGON,
+        SUV, CROSSOVER, PICKUP, VAN, MINIVAN,
+        ;
+    }
+
+    private BodyType bodyType;
+
+    public PassengerCar(String brand, String model, double engineVolume, BodyType bodyType) {
+        super(brand, model, engineVolume);
+        this.bodyType = bodyType;
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
     }
 
     @Override

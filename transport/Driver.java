@@ -42,11 +42,11 @@ public class Driver<T extends Transport & Competing>{
         this.experience = experience;
     }
     public void getMoving() {
-        System.out.println(name + " запускает двигатель " + transport.getBrand()+ " и начачинает движение");
+        transport.getMoving();
     }
 
     public void stop() {
-        System.out.println(name + " останавливает "+ transport.getBrand());
+        transport.stop();
     }
 
     public void refill() {

@@ -8,10 +8,10 @@ public class Main {
         PassengerCar toyota = new PassengerCar("Toyota", "corolla", 1.4);
         PassengerCar renault = new PassengerCar("Renault", "logan", 1.4);
 
-        Truck ford = new Truck("Lada", "Transit", 16);
-        Truck mercedes = new Truck("Skoda", "Sprinter", 16);
-        Truck kamaz = new Truck("Kamaz", "54901", 16);
-        Truck volkswagen = new Truck("Renault", "Crafter", 16);
+        Truck ford = new Truck("Lada", "Transit", 16, Truck.Capacity.N2);
+        Truck mercedes = new Truck("Skoda", "Sprinter", 16, Truck.Capacity.N2);
+        Truck kamaz = new Truck("Kamaz", "54901", 16,Truck.Capacity.N1);
+        Truck volkswagen = new Truck("Renault", "Crafter", 16, Truck.Capacity.N3);
 
         RacingBus simaz = new RacingBus("Simaz", "2258-539", 12);
         RacingBus scania = new RacingBus("Scania", "TOURING", 12);
@@ -28,6 +28,8 @@ public class Main {
         lada.maxSpeed(100);
 
 
+
+
         CDriver trevor = new CDriver("Тревор", "C", 13, kamaz);
         trevor.printInfo();
 
@@ -41,6 +43,8 @@ public class Main {
         den.stop();
 
         trevor.refill();
+
+        kamaz.findTypeAuto();
      /*   Car grande = new Car("Lada", null, 1.7, "жёлтый", 2015, "Россия", 130, "auto", "Hatchback", "x000xx00", 5, "летняя");
         grande.printInfo();
 
