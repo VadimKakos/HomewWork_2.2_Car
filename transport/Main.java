@@ -45,6 +45,9 @@ public class Main {
         trevor.refill();
 
         kamaz.findTypeAuto();
+        service(lada, skoda, ford, mercedes, simaz, scania);
+
+
      /*   Car grande = new Car("Lada", null, 1.7, "жёлтый", 2015, "Россия", 130, "auto", "Hatchback", "x000xx00", 5, "летняя");
         grande.printInfo();
 
@@ -95,6 +98,22 @@ public class Main {
         firstBus.printInfo();
 
     */
+    }
+
+    public static void service(Transport ... transports) {
+        for (Transport transport : transports) {
+            serviceTransport(transport);
+        }
+    }
+
+    public static void serviceTransport(Transport transport) {
+        try {
+            if (!transport.diagnosis()) {
+                throw new RuntimeException("Автомобиль " + transport.getBrand() + transport.getModel() + "не прошёл диагностику");
+            }
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 }

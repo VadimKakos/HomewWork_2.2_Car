@@ -33,10 +33,19 @@ public class PassengerCar extends Transport implements Competing{
         System.out.println("Начинаю движение");
     }
 
+
+
+
     @Override
     public void stop() {
+
         System.out.println("Останавливаюсь");
         System.out.println("Глушу двигатель автомобился");
+    }
+
+    @Override
+    public boolean diagnosis() {
+        return true;
     }
 
 

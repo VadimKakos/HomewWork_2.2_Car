@@ -74,4 +74,9 @@ public class Truck extends Transport implements Competing{
         System.out.println("Глушу двигатель грузовика");
     }
 
+    @Override
+    public boolean diagnosis() {
+        return true;
+    }
+
 }

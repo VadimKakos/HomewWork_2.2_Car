@@ -15,6 +15,8 @@ public abstract class Transport {
 
     public abstract void stop();
 
+    public abstract boolean diagnosis();
+
     /*
 
     private final int productionYear;

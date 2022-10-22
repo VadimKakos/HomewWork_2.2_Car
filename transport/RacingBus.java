@@ -78,6 +78,12 @@ public class RacingBus extends Transport implements Competing{
         System.out.println("Останавливаюсь");
         System.out.println("Глушу двигатель автобуса");
     }
+
+    @Override
+    public boolean diagnosis() {
+        System.out.println("автобусы в диагностике не требуются");
+        return true;
+    }
 }
 
 
