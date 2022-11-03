@@ -84,6 +84,11 @@ public class RacingBus extends Transport implements Competing{
         System.out.println("автобусы в диагностике не требуются");
         return true;
     }
+
+    @Override
+    public void repair() {
+        System.out.println("Автобус "+getBrand() + " починина");
+    }
 }
 
 

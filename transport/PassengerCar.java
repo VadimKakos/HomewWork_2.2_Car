@@ -48,6 +48,12 @@ public class PassengerCar extends Transport implements Competing{
         return true;
     }
 
+    @Override
+    public void repair() {
+
+        System.out.println("Машина починина");
+    }
+
 
     @Override
     public void pitStop() {

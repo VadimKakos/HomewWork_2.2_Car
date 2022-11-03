@@ -79,4 +79,9 @@ public class Truck extends Transport implements Competing{
         return true;
     }
 
+    @Override
+    public void repair() {
+        System.out.println("Грузовик "+getBrand() + " починина");
+    }
+
 }

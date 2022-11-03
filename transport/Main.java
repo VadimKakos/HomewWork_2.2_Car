@@ -1,51 +1,146 @@
 package transport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-
         PassengerCar lada = new PassengerCar("Lada", "2110", 1.4);
+        Mech<PassengerCar> Jen = new Mech<PassengerCar>("Женя", " Мильковский ", " of heroes");
+        Sponsor SQL = new Sponsor("SQL", 100);
+        BDriver Max = new BDriver("Максим", "B", 13, lada);
+        lada.addDriver(Max);
+        lada.addMech(Jen);
+        lada.addSponsor(SQL);
+
         PassengerCar skoda = new PassengerCar("Skoda", "rapid", 1.4);
+        Mech<PassengerCar> vad = new Mech<PassengerCar>("Вадим", " Кос ", " of heroes");
+        Sponsor ss = new Sponsor("ss", 200);
+        BDriver ram = new BDriver("Рамис", "B", 13, skoda);
+        skoda.addDriver(ram);
+        skoda.addMech(vad);
+        skoda.addSponsor(ss);
+
         PassengerCar toyota = new PassengerCar("Toyota", "corolla", 1.4);
+        Mech<PassengerCar> an = new Mech<PassengerCar>("Андрей", " Кос ", " of heroes");
+        Sponsor qq = new Sponsor("qq", 300);
+        BDriver zus = new BDriver("Рамис", "B", 13, toyota);
+        toyota.addDriver(zus);
+        toyota.addMech(an);
+        toyota.addSponsor(qq);
+
         PassengerCar renault = new PassengerCar("Renault", "logan", 1.4);
+        Mech<PassengerCar> al = new Mech<PassengerCar>("Алексей", " Кос ", " of heroes");
+        Sponsor ww = new Sponsor("ww", 400);
+        BDriver aal = new BDriver("Альберт", "B", 13, renault);
+        renault.addDriver(aal);
+        renault.addMech(al);
+        renault.addSponsor(ww);
+
 
         Truck ford = new Truck("Lada", "Transit", 16, Truck.Capacity.N2);
+        Mech<Truck> rob = new Mech<Truck>("Роберто", " Кос ", " of heroes");
+        Sponsor ee = new Sponsor("ee", 500);
+        CDriver rom = new CDriver("Ромеро", "C", 13, ford);
+        ford.addDriver(rom);
+        ford.addMech(rob);
+        ford.addSponsor(ee);
+
         Truck mercedes = new Truck("Skoda", "Sprinter", 16, Truck.Capacity.N2);
+        Mech<Truck> kar = new Mech<Truck>("Карлос", " Кос ", " of heroes");
+        Sponsor rr = new Sponsor("rr", 600);
+        CDriver lad = new CDriver("лада", "C", 13, mercedes);
+        mercedes.addDriver(lad);
+        mercedes.addMech(kar);
+        mercedes.addSponsor(rr);
+
         Truck kamaz = new Truck("Kamaz", "54901", 16,Truck.Capacity.N1);
+        Mech<Truck> mech5 = new Mech<Truck>("mech5", " Кос ", " of heroes");
+        Sponsor sponsor = new Sponsor("sponsor", 700);
+        CDriver car = new CDriver("car", "C", 13, kamaz);
+        kamaz.addDriver(car);
+        kamaz.addMech(mech5);
+        kamaz.addSponsor(sponsor);
+
         Truck volkswagen = new Truck("Renault", "Crafter", 16, Truck.Capacity.N3);
+        Mech<Truck> mech = new Mech<Truck>("mech", " Кос ", " of heroes");
+        Sponsor sponsor1 = new Sponsor("sponsor1", 800);
+        CDriver cDriver = new CDriver("cDriver", "C", 13, volkswagen);
+        volkswagen.addDriver(cDriver);
+        volkswagen.addMech(mech);
+        volkswagen.addSponsor(sponsor1);
 
         RacingBus simaz = new RacingBus("Simaz", "2258-539", 12);
+        Mech<RacingBus> mech1 = new Mech<RacingBus>("mech1", " Кос ", " of heroes");
+        Sponsor sponsor2 = new Sponsor("sponsor2", 900);
+        DDriver driver = new DDriver("driver", "D", 13, simaz);
+        simaz.addDriver(driver);
+        simaz.addMech(mech1);
+        simaz.addSponsor(sponsor2);
+
         RacingBus scania = new RacingBus("Scania", "TOURING", 12);
+        Mech<RacingBus> mech2 = new Mech<RacingBus>("mech2", " Кос ", " of heroes");
+        Sponsor sponsor3 = new Sponsor("sponsor3", 1000);
+        DDriver dDriver = new DDriver("dDriver", "C", 13, scania);
+        scania.addDriver(dDriver);
+        scania.addMech(mech2);
+        scania.addSponsor(sponsor3);
+
         RacingBus man = new RacingBus("Man", "Lion’s Coach", 12);
+        Mech<RacingBus> mech3 = new Mech<RacingBus>("mech3", " Кос ", " of heroes");
+        Sponsor sponsor4 = new Sponsor("sponsor4", 1100);
+        DDriver dDriver1 = new DDriver("dDriver1", "C", 13, man);
+        man.addDriver(dDriver1);
+        man.addMech(mech3);
+        man.addSponsor(sponsor4);
+
         RacingBus maz = new RacingBus("Maз", "241", 12);
+        Mech<RacingBus> mech4 = new Mech<RacingBus>("mech3", " Кос ", " of heroes");
+        Sponsor sponsor5 = new Sponsor("sponsor5", 1200);
+        DDriver dDriver2 = new DDriver("dDriver2", "C", 13, maz);
+        maz.addDriver(dDriver2);
+        maz.addMech(mech4);
+        maz.addSponsor(sponsor5);
 
+        printInfo(maz);
 
-        lada.getMoving();
-        ford.getMoving();
-        simaz.stop();
+        ServiceStation serviceStation = new ServiceStation();
+        serviceStation.addPassengerCar(lada);
+        serviceStation.addTruck(volkswagen);
+        serviceStation.service();
+        serviceStation.service();
+        //lada.getMoving();
+       // ford.getMoving();
+       // simaz.stop();
 
-        lada.pitStop();
-        lada.bestTime(120);
-        lada.maxSpeed(100);
+        //lada.pitStop();
+        //lada.bestTime(120);
+       // lada.maxSpeed(100);
 
 
 
 
         CDriver trevor = new CDriver("Тревор", "C", 13, kamaz);
-        trevor.printInfo();
+     //   trevor.printInfo();
 
         BDriver max = new BDriver("Максим", "B", 13, lada);
-        max.printInfo();
+      //  max.printInfo();
 
         DDriver den = new DDriver("Денис", "D", 13, scania);
-        den.printInfo();
+       // den.printInfo();
 
         den.getMoving();
-        den.stop();
+      //  den.stop();
 
-        trevor.refill();
+      //  trevor.refill();
 
         kamaz.findTypeAuto();
-        service(lada, skoda, ford, mercedes, simaz, scania);
+      //  service(lada, skoda, ford, mercedes, simaz, scania);
+
+
+
+      //  ArrayList<Transport> transports = (ArrayList<Transport>) List.of(lada, skoda, toyota, renault, ford, mercedes, kamaz, volkswagen, simaz, scania, man, maz);
+
 
 
      /*   Car grande = new Car("Lada", null, 1.7, "жёлтый", 2015, "Россия", 130, "auto", "Hatchback", "x000xx00", 5, "летняя");
@@ -100,6 +195,23 @@ public class Main {
     */
     }
 
+    private static void printInfo(Transport transport) {
+        System.out.println("Информация по автомобилю " + transport.getBrand());
+        System.out.println("Водители: ");
+        for (Driver<?> driver : transport.getDrivers()) {
+            System.out.println(driver.getName());
+        }
+        System.out.println("Спонсоры: ");
+        for (Sponsor sponsor : transport.getSponsors()) {
+            System.out.println(sponsor.getName());
+        }
+        System.out.println("Механики: ");
+        for (Mech<?> mech : transport.getMeches()) {
+            System.out.println(mech.getName() + " "+ mech.getSurName() + " "+ mech.getCompany());
+        }
+
+    }
+
     public static void service(Transport ... transports) {
         for (Transport transport : transports) {
             serviceTransport(transport);
@@ -115,5 +227,7 @@ public class Main {
             System.out.println(e.getMessage());
         }
     }
+
+
 
 }

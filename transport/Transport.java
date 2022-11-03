@@ -1,9 +1,15 @@
 package transport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Transport {
-    private  String brand;
-    private  String model;
-    private  double engineVolume;
+    private String brand;
+    private String model;
+    private double engineVolume;
+    private final ArrayList<Driver> drivers = new ArrayList<>();
+    private final ArrayList<Mech> meches = new ArrayList<>();
+    private final ArrayList<Sponsor> sponsors = new ArrayList<>();
 
     public Transport(String brand, String model, double engineVolume) {
         setBrand(brand);
@@ -11,11 +17,43 @@ public abstract class Transport {
         setEngineVolume(engineVolume);
     }
 
+
+    public ArrayList<Transport> getParticipant() {
+        return participant;
+    }
+
+    public ArrayList<Driver> getDrivers() {
+        return drivers;
+    }
+
+    public ArrayList<Mech> getMeches() {
+        return meches;
+    }
+
+    public ArrayList<Sponsor> getSponsors() {
+        return sponsors;
+    }
+
+    public void addDriver(Driver<?>driver) {
+        drivers.add(driver);
+    }
+    public void addMech(Mech<?>mech) {
+        meches.add(mech);
+    }
+    public void addSponsor(Sponsor sponsor ) {
+        sponsors.add(sponsor);
+    }
+
+    private ArrayList<Transport> participant;
+
+
     public abstract void getMoving();
 
     public abstract void stop();
 
     public abstract boolean diagnosis();
+
+    public abstract void repair() ;
 
     /*
 
@@ -34,11 +72,11 @@ public abstract class Transport {
         this.maxSpeed = maxSpeed;
    }*/
 
-   // public abstract void refill();
+    // public abstract void refill();
 
-  //  public void talk() {
-  //      System.out.println(getBrand());
-  //  }
+    //  public void talk() {
+    //      System.out.println(getBrand());
+    //  }
 
     public String getBrand() {
         return brand;
